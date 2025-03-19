@@ -93,6 +93,10 @@ run_and_compare() {
 		    echo "[PASS] $test_name matches reference."
 	    else
 		    echo "[FAIL] $test_name differs from reference."
+		    echo "REF:"
+		    cat ${reference_file}.2
+		    echo "OUT:"
+		    cat ${output_file}.2
 		    exit 1
 	    fi
     else
