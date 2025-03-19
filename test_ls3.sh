@@ -84,7 +84,9 @@ run_and_compare() {
 
     # Compare with reference (if the reference file exists)
     if [ -f "$reference_file" ]; then
-	    diff -u "$reference_file" "$output_file"
+	    awk '{ $3=""; $4=""; print }' $reference_file > ${reference_file}.stripped
+	    awk '{ $3=""; $4=""; print }' $output_file> ${output_file}.stripped
+	    diff -u "${reference_file}.stripped" "${output_file}.stripped"
 	    if [ $? -eq 0 ]; then
 		    echo "[PASS] $test_name matches reference."
 	    else

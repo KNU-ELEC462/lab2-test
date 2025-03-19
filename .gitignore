@@ -7,3 +7,6 @@ test_dir1_ls3
 test_dir2_ls3
 test_dst
 test_src
+ls3_references/test1_ref.txt.stripped
+ls3_references/test2_ref.txt.stripped
+ls3_references/test3_ref.txt.stripped
