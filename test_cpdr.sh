@@ -84,5 +84,5 @@ for dir in "$TEST_SRC/dir1" "$TEST_SRC/dir1/dir2" "$TEST_SRC/dir1/dir2/dir3" "$T
 	fi
 done
 
-echo "SUCCESS: All tests passed successfully!"
+echo "SUCCESS: All tests passed!"
 exit 0

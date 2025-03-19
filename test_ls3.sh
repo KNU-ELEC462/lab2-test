@@ -118,5 +118,5 @@ run_and_compare \
 	"$REF_DIR/test3_ref.txt" \
 	"Test 3: Multiple arguments for test directories"
 
-echo "SUCCESS: All tests passed successfully!"
+echo "SUCCESS: All tests passed!"
 exit 0
