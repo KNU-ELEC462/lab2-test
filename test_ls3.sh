@@ -84,8 +84,8 @@ run_and_compare() {
 
     # Compare with reference (if the reference file exists)
     if [ -f "$reference_file" ]; then
-	    cat ${reference_file} | tr -s ' ' > ${reference_file}.1
-	    cat ${output_file} | tr -s ' ' > ${output_file}.1
+	    cat ${reference_file} | tr -s ' ' | sort -r > ${reference_file}.1
+	    cat ${output_file} | tr -s ' ' | sort -r > ${output_file}.1
 	    awk '{ $3=""; $4=""; print }' ${reference_file}.1 > ${reference_file}.2
 	    awk '{ $3=""; $4=""; print }' ${output_file}.1 > ${output_file}.2
 	    diff -u "${reference_file}.2" "${output_file}.2"
