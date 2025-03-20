@@ -30,11 +30,14 @@ touch "$TEST_DIR2/file1_in_dir2.txt" \
 	"$TEST_DIR2/sub_dir2/sub_sub_dir2/deeper_file.txt"
 
 # Adjust permissions to show different mode bits
+chmod 775 "$TEST_DIR1/sub_dir1"
 chmod 644 "$TEST_DIR1/file1_in_dir1.txt"
 chmod 600 "$TEST_DIR1/file2_in_dir1.txt"
 chmod 755 "$TEST_DIR1/sub_dir1/sub_file1.txt"
 chmod 700 "$TEST_DIR1/sub_dir1/sub_file2.txt"
 
+chmod 775 "$TEST_DIR2/sub_dir2"
+chmod 755 "$TEST_DIR2/sub_dir2/sub_sub_dir2"
 chmod 644 "$TEST_DIR2/file1_in_dir2.txt"
 chmod 600 "$TEST_DIR2/sub_dir2/file_in_sub_dir2.txt"
 chmod 755 "$TEST_DIR2/sub_dir2/sub_sub_dir2/deeper_file.txt"
