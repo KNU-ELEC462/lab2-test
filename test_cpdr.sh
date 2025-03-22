@@ -3,6 +3,9 @@ TEST_BIN="cpdr"
 TEST_SRC="test_src"
 TEST_DST="test_dst"
 
+# Disable umask so permissions are set exactly as specified
+umask 0000
+
 # Cleanup any previous test artifacts
 rm -rf "$TEST_SRC" "$TEST_DST"
 
