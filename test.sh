@@ -42,7 +42,7 @@ SOURCE_FILE="${TARGET}.c"
 if [ ! -f "$SOURCE_FILE" ]; then
        echo "ERROR: Source file '$SOURCE_FILE' not found. Exiting."
        exit 1
-exit 1
+fi
 cd test
 ln -sf "../$SOURCE_FILE" "$SOURCE_FILE"
 
