@@ -37,6 +37,15 @@ fi
 
 install_if_missing "build-essential"
 
+# Check if the source file exists before creating the symbolic link
+SOURCE_FILE="${TARGET}.c"
+if [ ! -f "$SOURCE_FILE" ]; then
+       echo "ERROR: Source file '$SOURCE_FILE' not found. Exiting."
+       exit 1
+exit 1
+cd test
+ln -sf "../$SOURCE_FILE" "$SOURCE_FILE"
+
 # Run test
 echo "[INFO] Running test script for ${TARGET}"
 ${TEST_SCRIPT}
