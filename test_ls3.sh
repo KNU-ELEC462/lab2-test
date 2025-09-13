@@ -1,6 +1,9 @@
 #!/bin/bash
 TEST_BIN="ls3"
 
+SCRIPT_DIR="$(cd -- "$(dirname "$0")" && pwd -P)"
+WORKDIR="$SCRIPT_DIR/ls3_workdir"
+
 # 1) Compile
 rm -f $TEST_BIN
 gcc -o $TEST_BIN $TEST_BIN.c
@@ -8,6 +11,14 @@ if [ $? -ne 0 ]; then
 	echo "ERROR: Compilation failed."
 	exit 1
 fi
+
+# Clean start
+rm -rf "$WORKDIR"
+mkdir -p "$WORKDIR"
+pushd "$WORKDIR" >/dev/null
+
+ln -sf ../$TEST_BIN .
+ln -sf ../ls3_references/ .
 
 # 2) Create test directories with different structures
 TEST_DIR1="test_dir1_ls3"
@@ -79,7 +90,7 @@ run_and_compare() {
 	echo "[Command]: $test_cmd"
 
     # Run the command, capture output
-    touch -t "$FIXED_TIME" .
+    touch -t "$FIXED_TIME" $WORKDIR
     eval "$test_cmd" > "$output_file" 2>&1
     if [ $? -ne 0 ]; then
 	    echo "ERROR: Program execution failed!"
