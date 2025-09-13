@@ -79,6 +79,7 @@ run_and_compare() {
 	echo "[Command]: $test_cmd"
 
     # Run the command, capture output
+    touch -t "$FIXED_TIME" .
     eval "$test_cmd" > "$output_file" 2>&1
     if [ $? -ne 0 ]; then
 	    echo "ERROR: Program execution failed!"
