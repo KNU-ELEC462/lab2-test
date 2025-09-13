@@ -56,9 +56,9 @@ chmod 644 "$TEST_DIR2/file1_in_dir2.txt"
 chmod 600 "$TEST_DIR2/sub_dir2/file_in_sub_dir2.txt"
 chmod 755 "$TEST_DIR2/sub_dir2/sub_sub_dir2/deeper_file.txt"
 
-chmod 755 $WORKDIR
-chmod 755 $TEST_DIR1
-chmod 755 $TEST_DIR2
+chmod 775 $WORKDIR
+chmod 775 $TEST_DIR1
+chmod 775 $TEST_DIR2
 
 # 3) Set a fixed timestamp so outputs remain consistent across runs
 FIXED_TIME="202403201200.00"  # "YYYYMMDDhhmm.ss" => 2024-03-20 12:00:00
